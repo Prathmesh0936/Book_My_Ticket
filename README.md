@@ -4,16 +4,16 @@ Book My Ticket is a bus ticket booking application built with Spring Boot. It al
 
 ## Key Features
 
-Developed a full-stack bus ticket booking application using Spring Boot, providing functionalities for user registration, login, and ticket booking.
-Implemented RESTful APIs for managing buses, schedules, and ticket bookings, ensuring efficient and secure data handling.
-Integrated PDF generation for ticket bookings, allowing users to download and print their tickets.
-Utilized Spring Security for user authentication and authorization, enhancing the application's security.
-Configured email notifications for password reset functionality, improving user experience and account security.
-Designed and managed the MySQL database schema to store user, bus, schedule, and booking information.
-Employed Maven for project build and dependency management, ensuring a streamlined development process.
-Conducted unit testing using JUnit to ensure code quality and reliability.
-Deployed the application on a local server and tested it thoroughly to ensure functionality and performance.
-Collaborated with a team using Git for version control, facilitating efficient code management and collaboration.
+Developed a full-stack bus ticket booking application using Spring Boot, providing functionalities for user registration, login, and ticket booking.<br>
+Implemented RESTful APIs for managing buses, schedules, and ticket bookings, ensuring efficient and secure data handling.<br>
+Integrated PDF generation for ticket bookings, allowing users to download and print their tickets.<br>
+Utilized Spring Security for user authentication and authorization, enhancing the application's security.<br>
+Configured email notifications for password reset functionality, improving user experience and account security.<br>
+Designed and managed the MySQL database schema to store user, bus, schedule, and booking information.<br>
+Employed Maven for project build and dependency management, ensuring a streamlined development process.<br>
+Conducted unit testing using JUnit to ensure code quality and reliability.<br>
+Deployed the application on a local server and tested it thoroughly to ensure functionality and performance.<br>
+Collaborated with a team using Git for version control, facilitating efficient code management and collaboration.<br>
 
 ## Features
 
