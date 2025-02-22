@@ -26,72 +26,72 @@ Book My Ticket is a bus ticket booking application built with Spring Boot. It al
 
 ## Project Structure
 .
-├── .classpath
-├── .gitattributes
-├── .gitignore
-├── .mvn/
-│   └── wrapper/
-│       └── maven-wrapper.properties
-├── .project
-├── .settings/
-│   ├── org.eclipse.core.resources.prefs
-│   ├── org.eclipse.jdt.apt.core.prefs
-│   ├── org.eclipse.jdt.core.prefs
-│   ├── org.eclipse.m2e.core.prefs
-│   └── org.springframework.ide.eclipse.prefs
-├── .vscode/
-│   └── settings.json
-├── HELP.md
-├── mvnw
-├── mvnw.cmd
-├── pom.xml
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/prathmesh/bookmyticket/
-│   │   │       ├── BookMyTicketApplication.java
-│   │   │       ├── Controller/
-│   │   │       │   ├── Auth_Controller.java
-│   │   │       │   ├── Bus_Controller.java
-│   │   │       │   ├── ChangePasswordController.java
-│   │   │       │   └── Ticket_Controller.java
-│   │   │       ├── DAO/
-│   │   │       │   ├── Add_Bus_DAO.java
-│   │   │       │   ├── ChangePasswordDAO.java
-│   │   │       │   ├── CheckOtpDAO.java
-│   │   │       │   ├── Login_DAO.java
-│   │   │       │   ├── Register_User_DAO.java
-│   │   │       │   ├── SendEmailDAO.java
-│   │   │       │   └── Update_Bus_DAO.java
-│   │   │       ├── Repository/
-│   │   │       │   ├── Booking_Repository.java
-│   │   │       │   ├── Bus_Repository.java
-│   │   │       │   ├── PDFGeneration_Repository.java
-│   │   │       │   ├── Schedule_Repository.java
-│   │   │       │   └── User_Repository.java
-│   │   │       ├── Security_Configuration.java
-│   │   │       ├── Service/
-│   │   │       │   ├── Bus_Service.java
-│   │   │       │   ├── ChangeUserPasswordService.java
-│   │   │       │   ├── MyUserDetialsService.java
-│   │   │       │   ├── TicketGeneration_Service.java
-│   │   │       │   └── User_Service.java
-│   │   │       ├── entity/
-│   │   │       │   ├── Booking.java
-│   │   │       │   ├── Buses.java
-│   │   │       │   ├── PDFGeneration.java
-│   │   │       │   ├── Schedule.java
-│   │   │       │   └── User.java
-│   │   └── resources/
-│   │       ├── application.properties
-│   │       └── static/
-│   │       └── templates/
+├── .classpath<br>
+├── .gitattributes<br>
+├── .gitignore<br>
+├── .mvn/<br>
+│   └── wrapper/<br>
+│       └── maven-wrapper.properties<br>
+├── .project<br>
+├── .settings/<br>
+│   ├── org.eclipse.core.resources.prefs<br>
+│   ├── org.eclipse.jdt.apt.core.prefs<br>
+│   ├── org.eclipse.jdt.core.prefs<br>
+│   ├── org.eclipse.m2e.core.prefs<br>
+│   └── org.springframework.ide.eclipse.prefs<br>
+├── .vscode/<br>
+│   └── settings.json<br>
+├── HELP.md<br>
+├── mvnw<br>
+├── mvnw.cmd<br>
+├── pom.xml<br>
+├── src/<br>
+│   ├── main/<br>
+│   │   ├── java/<br>
+│   │   │   └── com/prathmesh/bookmyticket/<br>
+│   │   │       ├── BookMyTicketApplication.java<br>
+│   │   │       ├── Controller/<br>
+│   │   │       │   ├── Auth_Controller.java<br>
+│   │   │       │   ├── Bus_Controller.java<br>
+│   │   │       │   ├── ChangePasswordController.java<br>
+│   │   │       │   └── Ticket_Controller.java<br>
+│   │   │       ├── DAO/<br>
+│   │   │       │   ├── Add_Bus_DAO.java<br>
+│   │   │       │   ├── ChangePasswordDAO.java<br>
+│   │   │       │   ├── CheckOtpDAO.java<br>
+│   │   │       │   ├── Login_DAO.java<br>
+│   │   │       │   ├── Register_User_DAO.java<br>
+│   │   │       │   ├── SendEmailDAO.java<br>
+│   │   │       │   └── Update_Bus_DAO.java<br>
+│   │   │       ├── Repository/<br>
+│   │   │       │   ├── Booking_Repository.java<br>
+│   │   │       │   ├── Bus_Repository.java<br>
+│   │   │       │   ├── PDFGeneration_Repository.java<br>
+│   │   │       │   ├── Schedule_Repository.java<br>
+│   │   │       │   └── User_Repository.java<br>
+│   │   │       ├── Security_Configuration.java<br>
+│   │   │       ├── Service/<br>
+│   │   │       │   ├── Bus_Service.java<br>
+│   │   │       │   ├── ChangeUserPasswordService.java<br>
+│   │   │       │   ├── MyUserDetialsService.java<br>
+│   │   │       │   ├── TicketGeneration_Service.java<br>
+│   │   │       │   └── User_Service.java<br>
+│   │   │       ├── entity/<br>
+│   │   │       │   ├── Booking.java<br>
+│   │   │       │   ├── Buses.java<br>
+│   │   │       │   ├── PDFGeneration.java<br>
+│   │   │       │   ├── Schedule.java<br>
+│   │   │       │   └── User.java<br>
+│   │   └── resources/<br>
+│   │       ├── application.properties<br>
+│   │       └── static/<br>
+│   │       └── templates/<br>
 │   └── test/
-│       └── java/com/prathmesh/bookmyticket/
-│           └── BookMyTicketApplicationTests.java
-└── target/
-    ├── classes/
-    └── test-classes/
+│       └── java/com/prathmesh/bookmyticket/<br>
+│           └── BookMyTicketApplicationTests.java<br>
+└── target/<br>
+    ├── classes/<br>
+    └── test-classes/<br>
 
 
 ## Getting Started
