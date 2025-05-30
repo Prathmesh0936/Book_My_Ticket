@@ -242,17 +242,17 @@ npm run dev
 - Secure session management
 
 ## 📦 Project Structure
-src/
-├── main/
-│ ├── java/
-│ │ └── com/
-│ │ └── prathmesh/
-│ │ └── bookmyticket/
-│ │ ├── Controller/
-│ │ ├── Service/
-│ │ ├── Repository/
-│ │ ├── entity/
-│ │ ├── DAO/
-│ │ └── Security_Configuration.java
-│ └── resources/
-│ └── application.properties
+src/ <br>
+├── main/<br>
+│ ├── java/<br>
+│ │ └── com/<br>
+│ │ └── prathmesh/<br>
+│ │ └── bookmyticket/<br>
+│ │ ├── Controller/<br>
+│ │ ├── Service/<br>
+│ │ ├── Repository/<br>
+│ │ ├── entity/<br>
+│ │ ├── DAO/<br>
+│ │ └── Security_Configuration.java<br>
+│ └── resources/<br>
+│ └── application.properties<br>
