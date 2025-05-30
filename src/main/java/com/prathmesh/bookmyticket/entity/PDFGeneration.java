@@ -3,6 +3,8 @@ package com.prathmesh.bookmyticket.entity;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.data.rest.core.annotation.RestResource;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
@@ -25,6 +27,7 @@ public class PDFGeneration {
 	@OneToOne
 	@JoinColumn(name = "booking_id")
 	@RestResource(path = "pdfBooking", rel = "booking")
+	@JsonIgnore
 	private Booking booking;
 	
 	@ManyToOne

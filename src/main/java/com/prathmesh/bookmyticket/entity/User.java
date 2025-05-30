@@ -3,12 +3,16 @@ package com.prathmesh.bookmyticket.entity;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -31,6 +35,7 @@ public class User implements UserDetails {
 	private String last_name;
 	private String email;
 	private String gender;
+	@JsonIgnore
 	private String password;
 	
 	@ElementCollection
@@ -122,15 +127,24 @@ public class User implements UserDetails {
 		
 		// empty constructor
 		
-	}
+	}    
 	
+	public void setAuthoritiesFromRoles() {
+        this.authorities = this.roles.stream()
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
+        }
+	
+	
+	
+	@JsonIgnore
 	@Transient
 	private Collection<? extends GrantedAuthority> authorities;
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		
-		return this.authorities;
+		return authorities != null ? authorities : List.of();
 	}
 	@Override
 	public String getUsername() {

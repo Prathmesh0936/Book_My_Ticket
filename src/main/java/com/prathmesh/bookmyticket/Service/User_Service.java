@@ -1,5 +1,7 @@
 package com.prathmesh.bookmyticket.Service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -33,12 +35,17 @@ public class User_Service {
 		user.setLast_name(register_User_DAO.getLast_name());
 		user.setEmail(register_User_DAO.getEmail());
 		user.setPassword(passwordEncoder.encode(register_User_DAO.getPassword()));
+		user.setGender(register_User_DAO.getGender());
 		user.setRoles(register_User_DAO.getRoles());
 		
 		this.user_Repository.save(user);
 		
 		return user;
 		
+		
 	}
 	
+	public Optional<User> findByEmail(String email) {
+		return user_Repository.findByEmail(email);
+	}
 }

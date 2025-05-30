@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.prathmesh.bookmyticket.DAO.Add_Bus_DAO;
+import com.prathmesh.bookmyticket.DAO.ScheduleDTO;
 import com.prathmesh.bookmyticket.DAO.Update_Bus_DAO;
 import com.prathmesh.bookmyticket.Repository.Bus_Repository;
 import com.prathmesh.bookmyticket.entity.Buses;
+import com.prathmesh.bookmyticket.entity.Schedule;
 
 @Service
 public class Bus_Service {
@@ -18,22 +20,34 @@ public class Bus_Service {
 	private Bus_Repository bus_Repository;
 	
 	public Buses Add_new_Bus(Add_Bus_DAO add_Bus_DAO) {
-		
-		Buses buses = new Buses();
-		
-		buses.setName(add_Bus_DAO.getName());
-		buses.setSource(add_Bus_DAO.getSource());
-		buses.setDestination(add_Bus_DAO.getDestination());
-		buses.setOperator(add_Bus_DAO.getOperator());
-		buses.setTotal_seats(add_Bus_DAO.getTotal_seats());;
-		buses.setAmenities(add_Bus_DAO.getAmenities());
-		buses.setJourney_duration(add_Bus_DAO.getJourney_duration());
-		
-		this.bus_Repository.save(buses);
-		
-		return buses;
-		
+	    Buses bus = new Buses();
+	    bus.setName(add_Bus_DAO.getName());
+	    bus.setSource(add_Bus_DAO.getSource());
+	    bus.setDestination(add_Bus_DAO.getDestination());
+	    bus.setOperator(add_Bus_DAO.getOperator());
+	    bus.setTotal_seats(add_Bus_DAO.getTotal_seats());
+	    bus.setAmenities(add_Bus_DAO.getAmenities());
+	    bus.setJourney_duration(add_Bus_DAO.getJourney_duration());
+
+	    // Convert ScheduleDTO to Schedule entity
+	    List<Schedule> scheduleList = new ArrayList<>();
+	    if (add_Bus_DAO.getSchedules() != null) {
+	        for (ScheduleDTO dto : add_Bus_DAO.getSchedules()) {
+	            Schedule schedule = new Schedule();
+	            schedule.setDate(dto.getDate());
+	            schedule.setTime(dto.getTime());
+	            schedule.setFare(dto.getFare());
+	            schedule.setAvailable_seats(dto.getAvailableSeats());
+	            schedule.setBus(bus);  // Link to parent bus
+	            scheduleList.add(schedule);
+	        }
+	    }
+
+	    bus.setSchedules(scheduleList);
+	    return bus_Repository.save(bus);
 	}
+
+
 	
 	public List<Buses> ViewAllBuses(){
 		
@@ -110,12 +124,17 @@ public class Bus_Service {
 			
 			buses.setJourney_duration(update_Bus_DAO.getJourney_duration());
 			
-		}
+		}	
 		
 		this.bus_Repository.save(buses);
 		
 		return buses;
 		
 	}
+	
+	 // Method to find buses by source and destination
+    public List<Buses> findBusesBySourceAndDestination(String source, String destination) {
+        return bus_Repository.findBySourceAndDestination(source, destination);
+    }
 	
 }

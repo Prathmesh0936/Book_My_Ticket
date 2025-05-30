@@ -9,6 +9,7 @@ public class Register_User_DAO {
 	private String last_name;
 	private String email;
 	private String password;
+	private String gender;
 	private List<String> roles;
 	
 	public Integer getId() {
@@ -47,10 +48,17 @@ public class Register_User_DAO {
 	public void setRoles(List<String> roles) {
 		this.roles = roles;
 	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	
 	@Override
 	public String toString() {
 		return "Register_User_DAO [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", email="
-				+ email + ", password=" + password + ", roles=" + roles + "]";
+				+ email + ", password=" + password + ", gender=" + gender + ", roles=" + roles + "]";
 	}
 	
 	

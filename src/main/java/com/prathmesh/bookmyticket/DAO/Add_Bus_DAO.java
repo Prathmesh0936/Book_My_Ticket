@@ -1,5 +1,7 @@
 package com.prathmesh.bookmyticket.DAO;
 
+import java.util.List;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -24,6 +26,17 @@ public class Add_Bus_DAO {
 	private String amenities;
 	
 	private String journey_duration;
+	
+	private List<ScheduleDTO> schedules;
+
+	
+	public List<ScheduleDTO> getSchedules() {
+		return schedules;
+	}
+
+	public void setSchedules(List<ScheduleDTO> schedules) {
+		this.schedules = schedules;
+	}
 
 	public String getJourney_duration() {
 		return journey_duration;
@@ -85,7 +98,7 @@ public class Add_Bus_DAO {
 	public String toString() {
 		return "Add_Bus_DAO [name=" + name + ", source=" + source + ", destination=" + destination + ", total_seats="
 				+ total_seats + ", operator=" + operator + ", amenities=" + amenities + ", journey_duration="
-				+ journey_duration + "]";
+				+ journey_duration + ", schedules=" + schedules + "]";
 	}
 	
 	

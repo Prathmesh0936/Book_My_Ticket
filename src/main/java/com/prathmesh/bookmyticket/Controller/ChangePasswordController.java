@@ -16,7 +16,7 @@ import com.prathmesh.bookmyticket.Service.ChangeUserPasswordService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/users/changepassword")
+@RequestMapping("/api/users/changepassword")
 public class ChangePasswordController {
 	
 	@Autowired

@@ -8,6 +8,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.data.rest.core.annotation.RestResource;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
@@ -30,14 +32,17 @@ public class Schedule {
 	private Float fare;
 	
 	@ManyToOne
-	@JoinColumn(name = "bus_id")
+	@JoinColumn(name = "bus_id", nullable = false)
 	@RestResource(path =  "busSchedule" , rel = "bus")
+	@JsonIgnore
 	private Buses bus;
 	
 	@OneToMany(mappedBy = "schedule")
+	@JsonIgnore
 	private List<Booking> bookings;
 	
 	@OneToMany(mappedBy = "schedule")
+	@JsonIgnore
 	private List<PDFGeneration> pdfGenerations;
 	
 	@CreatedDate
@@ -88,13 +93,22 @@ public class Schedule {
 	public void setFare(Float fare) {
 		this.fare = fare;
 	}
-	
-	@Override
-	public String toString() {
-		return "Schedule [id=" + id + ", date=" + date + ", time=" + time + ", available_seats=" + available_seats
-				+ ", fare=" + fare + ", pdfGenerations=" + pdfGenerations + ", created_at=" + created_at
-				+ ", updated_at=" + updated_at + "]";
+	public Buses getBus() {
+		return bus;
 	}
-
-	
+	public void setBus(Buses bus) {
+		this.bus = bus;
+	}
+	public List<Booking> getBookings() {
+		return bookings;
+	}
+	public void setBookings(List<Booking> bookings) {
+		this.bookings = bookings;
+	}
+	public List<PDFGeneration> getPdfGenerations() {
+		return pdfGenerations;
+	}
+	public void setPdfGenerations(List<PDFGeneration> pdfGenerations) {
+		this.pdfGenerations = pdfGenerations;
+	}
 }

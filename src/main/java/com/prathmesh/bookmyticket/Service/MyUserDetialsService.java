@@ -26,6 +26,8 @@ public class MyUserDetialsService  implements UserDetailsService{
 		return this.user_Repository.findByEmail(username)
 				.map( user -> {
 					
+					 user.setAuthoritiesFromRoles();
+					
 					return new User( 	
 							
 							user.getEmail(),
@@ -45,5 +47,11 @@ public class MyUserDetialsService  implements UserDetailsService{
 						
 						);
 	}
-
+	
+	public User getUserByEmail(String email) {
+        return user_Repository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("User with this email not Found!!!"));
+    }
 }
+
+
