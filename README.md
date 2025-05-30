@@ -1,6 +1,6 @@
 # Book_My_Ticket
 
-# Book My Ticket - Frontend Development Execution Plan
+ Frontend Development Execution Plan
 
 ## Phase 1: Project Setup and Configuration (2-3 days)
 1. Initialize React project using Vite
