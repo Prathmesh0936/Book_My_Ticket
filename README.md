@@ -106,6 +106,7 @@ npm run dev
 - `POST /buseses` - Add new bus (Admin only)
 - `PUT /buseses/{id}` - Update bus (Admin only)
 - `DELETE /buseses/{id}` - Delete bus (Admin only)
+<<<<<<< HEAD
 
 ### Ticket Management APIs
 - `GET /tickets/generate/{id}` - Generate PDF ticket
@@ -256,3 +257,19 @@ src/ <br>
 │ │ └── Security_Configuration.java<br>
 │ └── resources/<br>
 │ └── application.properties<br>
+=======
+
+### Ticket Management APIs
+- `GET /tickets/generate/{id}` - Generate PDF ticket
+
+## 🔒 Security
+
+- JWT-based authentication
+- Role-based access control (USER/ADMIN)
+- Password encryption using BCrypt
+- OTP verification for password reset
+- CSRF protection
+- Secure session management
+
+## 📦 Project Structure
+>>>>>>> 1a36d60 (Local changes before rebase)
